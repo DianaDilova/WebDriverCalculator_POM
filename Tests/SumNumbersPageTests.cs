@@ -37,6 +37,15 @@ namespace WebDriverCalculatorPOM.Tests
 
         }
 
+        [Test]
+        public void Test_SumNumberPage_DivideTwoPositiveNumbers()
+        {
+            page.Open();
+            var actualResult = page.CalculateNumbers("10", "/", "2");
+            Assert.That(actualResult, Is.EqualTo("Result: 5"));
+
+        }
+
         [TestCase("5", "*", "15", "Result: 75")]
         [TestCase("5", "+", "15", "Result: 20")]
         [TestCase("5", "-", "15", "Result: -10")]
